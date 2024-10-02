@@ -1,0 +1,9 @@
+Kill Core
+================================================
+command:
+{
+    "type" : "admin",
+    "command" : "kill_core"
+}
+yields:
+    Nothing

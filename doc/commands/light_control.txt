@@ -1,0 +1,96 @@
+Add Light
+================================================
+command:
+{
+    "type" : "light_control",
+    "command" : "add_light",
+    "light_type" : <type_str>,
+    "room" : <room_str>,
+    "ip_addr" : <ip_addr_str>,
+    "port" : <port_num>,
+    "meta" : <metadata_obj>
+}
+yields:
+{
+    "success" : True | False
+}
+
+
+Remove Light
+================================================
+command:
+{
+    "type" : "light_control",
+    "command" : "remove_light",
+    "light_id" : <type_str>,
+}
+yields:
+{
+    "success" : True | False
+}
+
+
+Get Lights
+================================================
+command:
+{
+    "type" : "light_control",
+    "command" : "get_lights",
+    "room" : <room_str>             # Only room/id/type is required
+    "light_id" : <coredb_light_id>,
+    "light_type" : <light_type_str>
+}
+yields:
+{
+    "lights" : <light_obj_list>,
+}
+
+
+Set Light State
+================================================
+command:
+{
+    "type" : "light_control",
+    "command" : "set_state",
+    "room" : <room_str>             # Only room/id/type is required
+    "light_id" : <coredb_light_id>,
+    "light_type" : <light_type_str>
+    "state" : True | False
+}
+yields:
+{
+    "result" : True | False
+}
+
+
+Toggle Light State
+================================================
+command:
+{
+    "type" : "light_control",
+    "command" : "toggle_state",
+    "room" : <room_str>             # Only room/id/type is required
+    "light_id" : <coredb_light_id>,
+    "light_type" : <light_type_str>,
+    "force" : True | False
+}
+yields:
+{
+    "result" : True | False
+}
+
+
+Get Light State
+================================================
+command:
+{
+    "type" : "light_control",
+    "command" : "get_state",
+    "room" : <room_str>             # Only room/id/type is required
+    "light_id" : <coredb_light_id>,
+    "light_type" : <light_type_str>
+}
+yields:
+{
+    "lights" : <light_obj_list>     # Items will have "state" key (True | False)
+}

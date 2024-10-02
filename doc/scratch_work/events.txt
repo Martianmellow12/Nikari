@@ -1,0 +1,29 @@
+Formatting for duration
+============================================
+- Should be a timedelta
+
+
+Formatting for repetition
+============================================
+- Going to need several types of repetition
+    - Use timedelta for "every 7 days" types
+    - What to use for "every 5th of the month"?
+    - What to use for "every third Tuesday"?
+
+{
+    "type" : "delta" | "datenum" | "datename",
+    "occurrences" : <num_occurrences>,
+    # -1 indicates infinite recurrences #
+
+    # delta - "Every 3 days" #
+    "timedelta" : timedelta
+
+    # datenum - "Every 5th of the month" #
+    "datenum" : <date_number>
+
+    # dateval - "Every 3rd Tuesday" #
+    "dateval" : 0 - 6 (Mon - Sun),
+    "ord" : < 1->first, 2->2nd... >
+    # [num][sun|mon|tue|wed|thu|fri|sat] #
+    # ex. 2tue #
+}
